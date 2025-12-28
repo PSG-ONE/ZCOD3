@@ -1,28 +1,38 @@
-# Pablo Santa Gadea  
+# Pablo Santa Gadea
 **Construyendo el ecosistema donde la automatización deja de ser promesa y se convierte en ventaja.**
 
 ---
 
-## 🧭 Misión  
+## 🧭 Misión
 Crear un espacio práctico, accesible y avanzado para quienes no quieren depender de promesas vacías de IA, sino que quieren resultados. Automatización real, flujos inteligentes, agentes que resuelven. Esto es Zcod3.
 
 ---
 
-## ⚙️ Lo que estamos haciendo en Zcod3  
-- 🧠 Desbloqueamos conocimiento aplicable: flujos listos, prompts efectivos, lógica ofensiva.  
-- 🧩 Compartimos estructuras probadas con herramientas como N8N, Make, Flowise, GoHighLevel, Supabase, Redis, etc.  
-- 🧪 Creamos un laboratorio real donde testear, fallar y mejorar agentes, bots y automatizaciones con visión de negocio.  
+## ⚙️ Lo que estamos haciendo en Zcod3
+- 🧠 Desbloqueamos conocimiento aplicable: flujos listos, prompts efectivos, lógica ofensiva.
+- 🧩 Compartimos estructuras probadas con herramientas como N8N, Make, Flowise, GoHighLevel, Supabase, Redis, etc.
+- 🧪 Creamos un laboratorio real donde testear, fallar y mejorar agentes, bots y automatizaciones con visión de negocio.
 - 🤝 Conectamos a gente que quiere más que inspiración: quiere **sistemas que escalen**.
 
 ---
 
-## 🚀 ¿Por qué apoyar o unirse?  
-- Porque lo que hacemos no es teoría, es ejecución.  
-- Cada tutorial, flujo o código tiene detrás horas de pruebas reales.  
-- No hacemos contenido para “likes”, sino para que funcione.  
+## 🚀 ¿Por qué apoyar o unirse?
+- Porque lo que hacemos no es teoría, es ejecución.
+- Cada tutorial, flujo o código tiene detrás horas de pruebas reales.
+- No hacemos contenido para “likes”, sino para que funcione.
 - Si tú también piensas que el tiempo vale más que repetir tareas, este espacio es para ti.
 
 ---
 
-**Zcod3 no es solo una marca. Es una forma de construir sin esperar permiso.**
+## 🧩 Script para formatear tablas en n8n
+Puedes utilizar el archivo [`n8n/table-formatter.js`](n8n/table-formatter.js) dentro de un nodo **Code** (JavaScript) en n8n para convertir cualquier colección de elementos en una tabla HTML lista para enviar por correo, Slack u otra integración. El script:
 
+1. Detecta automáticamente las columnas a partir de las claves presentes en la propiedad `json` de los elementos de entrada.
+2. Escapa caracteres especiales para evitar problemas de HTML.
+3. Devuelve el resultado en el campo `output`, junto con metadatos como las columnas utilizadas y el número de filas.
+
+Solo necesitas copiar el contenido del archivo, pegarlo en el nodo Code y conectar la salida a tu flujo actual.
+
+---
+
+**Zcod3 no es solo una marca. Es una forma de construir sin esperar permiso.**
