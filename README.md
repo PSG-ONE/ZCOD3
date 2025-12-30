@@ -29,7 +29,8 @@ Puedes utilizar el archivo [`n8n/table-formatter.js`](n8n/table-formatter.js) de
 
 1. Detecta automáticamente las columnas a partir de las claves presentes en la propiedad `json` de los elementos de entrada.
 2. Escapa caracteres especiales para evitar problemas de HTML.
-3. Devuelve el resultado en el campo `output`, junto con metadatos como las columnas utilizadas y el número de filas.
+3. Devuelve el resultado en el campo `output`, junto con metadatos como las columnas utilizadas, el número de filas y un flag `hasData`.
+4. Si no hay datos, devuelve una tabla mínima con un mensaje, evitando el error de "campo `output` vacío".
 
 Solo necesitas copiar el contenido del archivo, pegarlo en el nodo Code y conectar la salida a tu flujo actual.
 

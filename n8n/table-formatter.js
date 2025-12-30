@@ -11,10 +11,6 @@
 // Gather all input items from previous nodes
 const items = $input.all();
 
-if (items.length === 0) {
-  throw new Error('No se recibieron elementos de entrada para construir la tabla.');
-}
-
 // Build the list of column names automatically from every row
 const columns = Array.from(
   new Set(
@@ -22,9 +18,7 @@ const columns = Array.from(
   ),
 );
 
-if (columns.length === 0) {
-  throw new Error('Los elementos de entrada no contienen campos en la propiedad `json`.');
-}
+const hasData = items.length > 0 && columns.length > 0;
 
 // Helper to escape HTML entities in cell values
 function escapeHtml(value) {
@@ -36,18 +30,27 @@ function escapeHtml(value) {
     .replace(/'/g, '&#39;');
 }
 
-// Compose the header and data rows
-const headerRow = columns.map((column) => `<th>${escapeHtml(column)}</th>`).join('');
+let headerRow = '';
+let bodyRows = '';
 
-const bodyRows = items
-  .map((item) => {
-    const cells = columns.map((column) => {
-      const value = item.json?.[column];
-      return `<td>${value === undefined || value === null ? '' : escapeHtml(value)}</td>`;
-    });
-    return `<tr>${cells.join('')}</tr>`;
-  })
-  .join('');
+if (hasData) {
+  // Compose the header and data rows when there is data
+  headerRow = columns.map((column) => `<th>${escapeHtml(column)}</th>`).join('');
+
+  bodyRows = items
+    .map((item) => {
+      const cells = columns.map((column) => {
+        const value = item.json?.[column];
+        return `<td>${value === undefined || value === null ? '' : escapeHtml(value)}</td>`;
+      });
+      return `<tr>${cells.join('')}</tr>`;
+    })
+    .join('');
+} else {
+  // Provide a minimal placeholder so the `output` field is never vacío
+  headerRow = '<th>Mensaje</th>';
+  bodyRows = '<tr><td>Sin datos disponibles para construir la tabla.</td></tr>';
+}
 
 const htmlTable = `
 <table style="border-collapse: collapse; width: 100%;">
@@ -69,6 +72,7 @@ return [
       output: htmlTable.trim(),
       columns,
       rowCount: items.length,
+      hasData,
     },
   },
 ];
