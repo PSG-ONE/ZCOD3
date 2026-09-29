@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pablo Santa Gadea | Ops & Automation Hub</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #10b981; 
+            --accent-blue: #06b6d4; 
+            --border-radius: 8px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; padding: 20px; }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+
+        @media (min-width: 768px) { .container { grid-template-columns: 350px 1fr; } }
+
+        header, .card {
+            background-color: var(--card-bg);
+            padding: 24px;
+            border-radius: var(--border-radius);
+            border: 1px solid #334155;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .card:hover { border-color: var(--accent); transform: translateY(-2px); }
+
+        header { display: flex; flex-direction: column; align-items: center; text-align: center; height: fit-content; position: sticky; top: 20px; }
+        .profile-img { width: 120px; height: 120px; border-radius: 50%; border: 3px solid var(--accent); object-fit: cover; margin-bottom: 16px; }
+        h1 { font-size: 1.5rem; margin-bottom: 4px; }
+        .subtitle { color: var(--accent-blue); font-size: 0.95rem; font-weight: 600; margin-bottom: 16px; text-transform: uppercase; }
+        
+        .contact-info { width: 100%; text-align: left; font-size: 0.9rem; border-top: 1px solid #334155; padding-top: 16px; }
+        .contact-info p { margin-bottom: 8px; color: var(--text-muted); }
+        .contact-info strong { color: var(--text-main); }
+
+        .main-content { display: flex; flex-direction: column; gap: 24px; }
+        h2 { font-size: 1.25rem; color: var(--accent); margin-bottom: 16px; border-bottom: 1px solid #334155; padding-bottom: 8px; }
+        p.profile-desc { color: var(--text-muted); font-size: 0.95rem; }
+
+        .badge-container { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+        .badge { background-color: #0f172a; color: var(--text-main); padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; border: 1px solid #475569; font-family: monospace; }
+        .badge.tech { border-color: var(--accent-blue); color: var(--accent-blue); }
+
+        .experience-item { margin-bottom: 20px; padding-left: 12px; border-left: 2px solid #475569; }
+        .exp-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; margin-bottom: 6px; }
+        .exp-title { font-weight: bold; font-size: 1rem; }
+        .exp-company { color: var(--accent-blue); font-size: 0.9rem; }
+        .exp-date { color: var(--text-muted); font-size: 0.85rem; font-family: monospace; }
+        .exp-desc { color: var(--text-muted); font-size: 0.9rem; margin-top: 6px; padding-left: 16px; }
+
+        /* Consola Interactiva */
+        .terminal { background-color: #090d16; font-family: monospace; padding: 16px; border-radius: 6px; border: 1px solid #334155; margin-top: 12px; }
+        .terminal-output { color: #38bdf8; font-size: 0.85rem; min-height: 60px; white-space: pre-line; }
+        .btn-action { background-color: var(--accent); color: #0f172a; border: none; padding: 8px 16px; font-weight: bold; border-radius: 4px; cursor: pointer; margin-top: 12px; font-size: 0.85rem; }
+        .btn-action:hover { background-color: #059669; }
+
+        a { color: var(--accent); text-decoration: none; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <img src="https://placeholder.com" alt="Pablo Santa Gadea" class="profile-img">
+        <h1>Pablo Santa Gadea</h1>
+        <div class="subtitle">Ops Manager & Automation Specialist</div>
+        
+        <div class="contact-info">
+            <p>📍 <strong>Ubicación:</strong> Bellavista, Callao, Perú</p>
+            <p>📱 <strong>Teléfono:</strong> +51 922 413 448</p>
+            <p>✉️ <strong>Email:</strong> <a href="mailto:santagadea.ia@gmail.com">santagadea.ia@gmail.com</a></p>
+            <p>🔗 <strong>LinkedIn:</strong> <a href="https://linkedin.com" target="_blank">psg-automatiza-con-ia</a></p>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="card">
+            <h2>// PERFIL PROFESIONAL</h2>
+            <p class="profile-desc">
+                Líder de operaciones y estratega de producto con sólida trayectoria dirigiendo unidades masivas de negocio, optimizando procesos y ejecutando transformación digital. Perfil híbrido excepcional: conecto la gestión de equipos de alto rendimiento y dirección de proyectos (PMP), con la capacidad técnica autónoma de construir arquitecturas automatizadas (n8n, Make), flujos de IA (LLMs) e infraestructura cloud privada (Self-Hosted en VPS). El puente perfecto entre objetivos de negocio y ejecución técnica.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>// CORE STACK & AUTOMATIZACIONES</h2>
+            <div style="margin-bottom: 12px;">
+                <div class="badge-container">
+                    <span class="badge tech">n8n</span>
+                    <span class="badge tech">Make</span>
+                    <span class="badge tech">Linux VPS</span>
+                    <span class="badge tech">Chatwoot (Self-Hosted)</span>
+                    <span class="badge tech">WhatsApp Cloud API</span>
+                    <span class="badge tech">Vaultwarden</span>
+                </div>
+            </div>
+            <div class="badge-container">
+                <span class="badge">Metodologías PMP</span>
+                <span class="badge">Power BI (Data Analyst)</span>
+                <span class="badge">Gestión del NPS</span>
+                <span class="badge">Prompt Engineering</span>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>// EXPERIENCIA LABORAL</h2>
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div>
+                        <div class="exp-title">Consultor de Operaciones Digitales & Automatización</div>
+                        <div class="exp-company">ZCOD3 S.A.C.</div>
+                    </div>
+                    <div class="exp-date">jun 2025 - Presente</div>
+                </div>
+                <ul class="exp-desc">
+                    <li>Desplegué y administré ecosistemas omnicanal autohospedados basados en <strong>Chatwoot (Self-Hosted)</strong> integrados con APIs de Meta.</li>
+                    <li>Automaticé flujos empresariales críticos y aprovisionamiento seguro mediante instancias privadas de Vaultwarden en entornos VPS.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div>
+                        <div class="exp-title">Analista de Automatización Operativa & Productos Digitales</div>
+                        <div class="exp-company">Smart Fit Perú</div>
+                    </div>
+                    <div class="exp-date">ene 2024 - jun 2025</div>
+                </div>
+                <ul class="exp-desc">
+                    <li>Conceptualicé y lideré el desarrollo de un **Bot inteligente interno para Smart Fit LATAM**, mitigando el sesgo en decisiones críticas de administración.</li>
+                    <li>Dirigí la reestructuración operativa de la sede Arequipa, logrando el **Primer Puesto Nacional en Satisfacción al Cliente (NPS)**.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ENTORNO INTERACTIVO DE PRUEBA -->
+        <section class="card">
+            <h2>// SIMULADOR DE ENTORNO EN VIVO (ZCOD3 LAB)</h2>
+            <p class="profile-desc" style="margin-bottom: 8px;">Prueba la inicialización de flujos simulados directamente en este servidor:</p>
+            <div class="terminal">
+                <div class="terminal-output" id="log-screen">> Servidor listo. Esperando inicialización...</div>
+            </div>
+            <button class="btn-action" onclick="runSimulation()">Ejecutar Simulación de Workflow</button>
+        </section>
+    </main>
+</div>
+
+<script>
+    function runSimulation() {
+        const screen = document.getElementById('log-screen');
+        screen.innerHTML = "> Inicializando entorno Zcod3 VPS...\n";
+        setTimeout(() => { screen.innerHTML += "> Conectando con webhook oficial de WhatsApp Cloud API... [OK]\n"; }, 600);
+        setTimeout(() => { screen.innerHTML += "> Desplegando nodo inteligente n8n + Agent Memory (Zep)... [OK]\n"; }, 1200);
+        setTimeout(() => { screen.innerHTML += "> ¡Ecosistema sincronizado con Chatwoot exitosamente! 🚀\n"; }, 1800);
+    }
+</script>
+
+</body>
+</html>
